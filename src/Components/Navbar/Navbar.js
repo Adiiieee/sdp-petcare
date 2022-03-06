@@ -6,7 +6,7 @@ function Navbar({user}) {
   return (
     <div className='navbar-container'>
         <div className='navbar-left'>
-            <h2 className='title'>PetCare</h2>
+            <Link to="/" style={{textDecoration:'none',color:'#fff'}}><h2 className='title'>PetCare</h2></Link>
         </div>
         <div className='navbar-right'>
             {!user&&<><Link to ="/login"><button className='login-btn'>

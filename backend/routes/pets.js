@@ -4,8 +4,6 @@ const petModel = require('../models/PetModel');
 const userModel = require('../models/SignUpModels');
 const {cloudinary} = require('../util/cloudinary');
 const cors = require('cors');
-const { request } = require('express');
-const { findOneAndUpdate } = require('../models/SignUpModels');
 
 router.use(cors());
 router.use(express.json({limit:'50mb'}));
