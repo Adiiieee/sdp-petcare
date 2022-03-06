@@ -17,7 +17,11 @@ const signUpTemplate = new mongoose.Schema({
      date :{
         type: Date,
         default: Date.now
-    }
+     },
+     pets:{
+         type:Number,
+         default:0
+     }
 })
 
 module.exports = mongoose.model('mytable',signUpTemplate)

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Navbar.scss';
 import {Link} from 'react-router-dom'
+import {AccountCircle} from '@material-ui/icons';
 function Navbar({user}) {
   return (
     <div className='navbar-container'>
@@ -15,8 +16,8 @@ function Navbar({user}) {
                 Signup
             </button></Link></>}
             {user &&<>
-            <h2>Hello, {user}</h2>
-            <Link to ="/login"><button className='signup-btn' onClick={()=>{localStorage.clear()}}>Log Out</button></Link>
+            <Link to ="/login" style={{textDecoration:'none'}}><button className='signup-btn' onClick={()=>{localStorage.clear()}}>Logout</button></Link>
+            <AccountCircle className='account-image'/>
             </>
             }
         </div>

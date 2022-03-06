@@ -9,16 +9,28 @@ function Signup() {
         if(localStorage.getItem("email") != null){
             window.location.href="/dashboard"
         }
+        
     },[])
     const [email,setEmail] = useState('');
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
     const [repeatPassword,setRepeatPassword] = useState('');
     const [error,setError]  = useState('');
+    const validateForm = () =>{
+        if(email.length == 0 || username.length == 0 || password.length == 0 || repeatPassword.length == 0){
+            return false;
+        }
+        return true;
+    }
     const handleSubmit =(e)=>{
         e.preventDefault();
+        if(!validateForm()){
+            setError('Please fill out all fields')
+            return;
+        }
         if(password != repeatPassword){
             setError('Passwords do not match');
+            return;
         }
         else{
             Axios.post('http://localhost:4000/app/signup',
@@ -49,7 +61,7 @@ function Signup() {
             <input id="password" type='password' required="required" placeholder='Password' name='password' value={password} onChange = {e=>setPassword(e.target.value)}/>
             <input type='password' required="required" placeholder='Enter Password' name='password' value={repeatPassword} onChange = {e=>setRepeatPassword(e.target.value)}/>
             <button type='submit' className='submit-btn' onClick={e=>handleSubmit(e)}>Register</button>
-            {error && <p>{error}</p>}
+            {error && <p className='error-div'>{error}</p>}
         </form>
         </div>
     </div>

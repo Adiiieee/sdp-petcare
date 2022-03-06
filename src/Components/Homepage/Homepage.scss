@@ -12,6 +12,35 @@
         overflow-y:scroll;
         border-right: 2px solid rgba(255,255,255,0.3);
         border-top: 1px solid rgba(255,255,255,0.3);
+        .dashboard-left-top{
+            background: rgba(255,255,255,0.7);
+            padding:20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .add-icon{
+                font-size: 4vmin;
+                &:hover{
+                     cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    color:#3f3f3f;
+                }
+            }
+        }
+        .dashboard-pet{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: space-evenly;
+            img{
+                width:30vmin;
+                object-fit: contain;
+            }
+            h2{
+                font-size: 3.5vmin;
+                color:#3f3f3f;
+            }
+        }
     }
     .dashboard-middle{
         height: calc(100vh - 80px);
